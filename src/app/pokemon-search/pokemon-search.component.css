@@ -1,0 +1,275 @@
+header {
+	position: relative;
+	display: flex;
+	background: -webkit-linear-gradient(left, #f3f2ee, #dcc369);
+	padding: 10px;
+	width: 100%;
+	height: auto;
+	top: 0;
+	z-index: 100;
+}
+
+form {
+	width: 100%;
+	margin-left: 30px;
+	margin-top: 5px;
+	float: right;
+}
+
+form input {
+	width: 80%;
+	padding: 15px;
+	border: none;
+	font-size: 18px;
+	border-radius: 5px 0 0 5px;
+}
+
+form button {
+	width: auto;
+	height: auto;
+	padding: 15px;
+	border: none;
+	font-size: 18px;
+	background: #bfc406;
+	color: white;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+	position: absolute;
+}
+
+@media screen and (max-width: 600px) {
+	form {
+		margin: 0;
+	}
+	input {
+		width: 100%;
+		border-radius: 5px;
+		padding: 10px;
+	}
+	form button {
+		border-radius: 5px;
+		width: 80%;
+		position: static;
+		margin-top: 5px;
+	}
+}
+
+.container {
+	margin: 0 auto;
+	padding: 32px 15px;
+	max-width: 800px;
+	width: 100%;
+	position: relative;
+	min-height: 250px;
+	box-sizing: content-box;
+}
+
+#top .image {
+	font-size: 160%;
+	text-align: center;
+}
+
+#top .image em {
+	font-size: 100%
+}
+
+#top img,
+#top .moves {
+	border-bottom: solid 1px darkolivegreen;
+}
+
+#pokemons {
+	margin: 0 auto;
+	padding: 32px 15px;
+	width: 95%;
+	position: relative;
+	height: 0 auto;
+	box-sizing: border-box;
+}
+
+section .pokes {
+	margin: 0 auto;
+	padding: 32px 15px;
+	display: block;
+}
+
+header img {
+	max-width: 40%;
+	min-width: 40%;
+	height: auto;
+}
+
+.type h3,
+.type p,
+.height h3,
+.height p,
+.weight h3,
+.weight p,
+.habitat h3,
+.habitat p,
+.shape h3,
+.shape p,
+.abilities h3,
+.abilities p,
+.moves h3,
+.moves p {
+	clear: both;
+	display: inline;
+	vertical-align: top;
+}
+
+.type h4,
+.height h4,
+.weight h4,
+.abilities h4 {
+	clear: both;
+	display: inline;
+	vertical-align: top;
+}
+
+.type ul,
+.abilities ul,
+.moves ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+.type li,
+.abilities li,
+.moves li {
+	display: inline;
+	padding: 0 5px;
+	text-decoration: none;
+	float: flex;
+}
+
+.disc,
+.none {
+	clear: both;
+}
+
+#pokemons {
+	clear: all;
+	position: relative;
+}
+
+#pokemons .poke-list{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap
+}
+
+.pokebox {
+	margin: 0 auto;
+}
+.pokebox button{
+	position: relative;
+	right: 0;
+	bottom: 0;
+	opacity: 0.5;
+	background: black;
+	color:white;
+	border-radius: 10px;
+}
+
+.pokebox button:hover{
+	opacity: 1;
+
+}
+.poke-item {
+	border: solid 1px black;
+	margin: 5px;
+	border-radius: 15px;
+}
+
+.poke-list {
+	padding-left: 35px;
+}
+
+#pokemons li {
+	padding-bottom: 35px;
+	text-align: center;
+}
+
+.box {
+	padding-left: 20px;
+	width: 300px;
+	height: 360px;
+}
+
+@media screen and (min-width:300px) {
+	#pokemons .poke-list .poke-item {
+		font-size: 100%;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+@media screen and (min-width:600px) {
+	#pokemons .poke-list .poke-item {
+		width: 45%
+	}
+}
+
+@media screen and (min-width:900px) {
+	#pokemons .poke-list .poke-item {
+		width: 28%
+	}
+}
+
+@media screen and (min-width:1200px) {
+	#pokemons .poke-list .poke-item {
+		width: 23%
+	}
+}
+
+button a {
+	cursor: pointer;
+}
+
+.box button {
+	position: relative;
+	/* bottom: 5px;
+	right: 2em; */
+}
+
+button.left {
+	bottom: 82px;
+	left: 0;
+	padding: 10px;
+	opacity: 0.8;
+}
+
+button.right {
+	float: right;
+	bottom: 82px;
+	right: 0;
+	padding: 10px;
+	opacity: 0.8;
+}
+
+button:hover {
+	opacity: 1;
+}
+
+footer {
+	position: static;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	padding-top: 1.2em;
+	background-color: #333;
+	color: white;
+	text-align: center;
+	font-size: 50%;
+}

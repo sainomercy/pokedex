@@ -1,0 +1,132 @@
+<header>
+  <div>
+    <img src="../assets/pokédex.png" alt="logo pokédex">
+  </div>
+  <form>
+    <input type="text" #input (keyup.enter)="searchPokemon(input.value)" placeholder="Enter pokémon name">
+    <button (click)="searchPokemon(input.value)">Search</button>
+  </form>
+</header>
+<section class="container" id="top">
+  <!-- 1 -->
+  <div class="image">
+    <h1 [style.color]="getStyle(type)">{{searchedData.name | capitalize}}
+      <em>#{{searchedData.id}}</em>
+    </h1>
+    <img src="{{imageUrl}}" alt="{{searchedData.name}}">
+  </div>
+  <!-- 2 -->
+  <div class="type">
+    <h3>Type:</h3>
+    <ul *ngFor="let type of types">
+      <li>
+        <p>{{type.type.name | capitalize}}</p>
+      </li>
+    </ul>
+  </div>
+  <div class="height">
+    <h3>Height:</h3>
+    <p>
+      {{searchedData.height/10}} <em>m</em>
+    </p>
+  </div>
+  <div class="weight">
+    <h3>Weight:</h3>
+    <p>{{searchedData.weight/10}}
+      <em>kg</em> {{(searchedData.weight/10)*2.205 | number}}
+      <em>lbs</em>.
+    </p>
+  </div>
+  <!-- 3 -->
+  <div>
+    <!-- 3a -->
+    <div class="habitat">
+      <h3>Habitat:</h3>
+      <p>{{habitat | capitalize}}</p>
+    </div>
+    <!-- 3b -->
+    <div class="shape">
+      <h3>Shape:</h3>
+      <p>{{shape | capitalize}}</p>
+    </div>
+  </div>
+  <!-- 4 -->
+  <div class="abilities">
+    <h3>Abilities:</h3>
+    <ul *ngFor="let ability of abilities">
+      <li>
+        <p>{{ability.ability.name | capitalize}}</p>
+      </li>
+    </ul>
+  </div>
+  <div class="disc">
+    <h3>Discription:</h3>
+    <p>{{entryDesc}}</p>
+  </div>
+  <br>
+  <div class="moves">
+    <h3>Moves:</h3>
+    <ul *ngFor="let move of moves">
+      <li>
+        <p>{{move.move.name}},</p>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="pokes">
+  <div id="pokemons">
+    <h1 class="title">
+      Pokémon List
+    </h1>
+    <ol class="poke-list">
+      <li *ngFor="let list of nameList" data-type="{{list.types[0].type.name}}" class="poke-item">
+        <div class="box" [style.border.color]="getStyle(list.types[0].type.name)">
+          <div class="col-left">
+            <h3 class="poke-name">{{list.name | capitalize }} #{{list.id}} </h3>
+            <a (click)="pokeDetails(list.name)">
+              <img lsclass="poke-image" src="{{list.sprites.front_default}}" alt="{{list.name}}">
+            </a>
+          </div>
+          <div class="pokebox" [style.color]="getStyle(list.types[0].type.name)">
+            <div class="type">
+              <h4>Type : </h4>
+              <ul *ngFor="let type of list.types">
+                <li>
+                  <p>{{type.type.name | capitalize}}</p>
+                </li>
+              </ul>
+            </div>
+            <div class="height">
+              <h4>Height :</h4>
+              <p>{{list.height/10}} m </p>
+            </div>
+            <div class="weight">
+              <h4>Weight :</h4>
+              <p>{{list.weight/10}} kg</p>
+            </div>
+            <div class="abilities">
+              <h4>Abilities</h4>
+              <ul *ngFor="let ablity of list.abilities" class="ability">
+                <li>{{ablity.ability.name}}</li>
+              </ul>
+            </div>
+            <a href="#top">
+              <button (click)="pokeDetails(list.name)" id="top">Read more</button>
+            </a>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+  <section>
+    <button class="left" (click)="prevPage()">
+      Prev page
+    </button>
+    <button class="right" (click)="nextPage()">
+      next page
+    </button>
+  </section>
+</section>
+<footer>
+  <p>&copy; 2017 Sainath Reddy</p>
+</footer>
